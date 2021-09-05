@@ -7,8 +7,9 @@ MongoDB + ExpressJS + SocketIO + SwiftUI
 3. `docker-compose up -build`
 4. Check `http://localhost:8081` for DB GUI and `http://localhost` for apis (cannot get \)
 
-> http://localhost/create_code?username=1
-> http://localhost/make_payment?store_id=1&amount=1234&code=9000013685385798
+> Fetch code: GET | http://localhost/create_code?username=1
+
+> Make payment: GET | http://localhost/make_payment?store_id=1&amount=1234&code=9000013685385798
 
 ## Client
 1. Build with Xcode
