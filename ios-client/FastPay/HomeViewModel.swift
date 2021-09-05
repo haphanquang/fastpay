@@ -11,7 +11,7 @@ import SwiftUI
 import UIKit
 import Combine
 
-private let remote = ""
+private let remote = "http://fastr-LoadB-SP5AYZ3AHYX-953451090.ap-northeast-1.elb.amazonaws.com"
 private let localhost = "http://localhost"
 
 class HomeViewModel: ObservableObject {
@@ -24,6 +24,8 @@ class HomeViewModel: ObservableObject {
     @Published var username = "username 1"
     @Published var currentUser: User?
     @Published var hostType: Int = 0
+    @Published var storeId: String = "1"
+    @Published var amount: String = "1200"
     
     var payment: Payment?
     
@@ -136,7 +138,7 @@ class HomeViewModel: ObservableObject {
     
     
     func createPaymentQR(code: String) -> String {
-        return remote + "/make_payment?store_id=1&amount=19999&code=\(code)"
+        return remote + "/make_payment?store_id=\(storeId)&amount=\(amount)&code=\(code)"
     }
     
     private static func createDecoder() -> JSONDecoder {

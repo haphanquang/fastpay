@@ -12,7 +12,7 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 12) {
             if viewModel.currentUser == nil {
                 HStack {
                     TextField("enter username", text: $viewModel.username)
@@ -30,12 +30,13 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 .pickerStyle(SegmentedPickerStyle())
+                
+                Spacer()
             } else {
                 HStack {
                     Text("\(viewModel.username)" )
                         .font(.largeTitle)
                 }.padding()
-                Spacer()
                 
                 HStack {
                     if let barcode = viewModel.barcodeString {
@@ -48,6 +49,7 @@ struct HomeView: View {
                                         .stroke(Color.green)
                                 )
                             Text(barcode.inserting(separator: " ", every: 4))
+                                .font(.caption)
                                 .bold()
                         }
                         
@@ -74,17 +76,31 @@ struct HomeView: View {
                         Spacer().frame(height: 24)
                     }
                 }
-                
                 if viewModel.hostType == 1 {
                     if let barcode = viewModel.barcodeString {
-                        QRCodeView(qrcode: viewModel.createPaymentQR(code: barcode))
-                            .frame(width: 120, height: 120)
+                        Rectangle().fill(Color.gray).frame(height: 1)
+                        VStack(spacing: 8) {
+                            Text("Claim with your camera").font(.title2).padding()
+                            Text(viewModel.createPaymentQR(code: barcode)).font(.caption2)
+                            QRCodeView(qrcode: viewModel.createPaymentQR(code: barcode))
+                                .frame(width: 120, height: 120)
+                            
+                            HStack {
+                                Text("Store ID").bold()
+                                TextField("", text: $viewModel.storeId)
+                            }.padding(.top, 12)
+                            
+                            HStack {
+                                Text("Amount").bold()
+                                Text("¥")
+                                TextField("", text: $viewModel.amount)
+                            }
+                        }.padding()
                     }
                 }
                 
+                Spacer()
             }
-
-            Spacer()
         }.sheet(isPresented: $viewModel.showPayment, content: {
             PaymentView(payment: viewModel.payment!)
         })
