@@ -52,7 +52,7 @@ extension UIImage {
             return nil
         }
         filter.setValue(data, forKey: "inputMessage")
-        let transform = CGAffineTransform(scaleX: 3, y: 3)
+        let transform = CGAffineTransform(scaleX: 2, y: 2)
         guard let ciImage = filter.outputImage?.transformed(by: transform) else {
             return nil
         }

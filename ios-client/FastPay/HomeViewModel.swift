@@ -11,12 +11,10 @@ import SwiftUI
 import UIKit
 import Combine
 
-private let remote = "http://fastr-LoadB-SP5AYZ3AHYX-953451090.ap-northeast-1.elb.amazonaws.com"
+private let remote = ""
 private let localhost = "http://localhost"
 
 class HomeViewModel: ObservableObject {
-    
-    
     @Published var barcodeString: String?
     @Published var countdown: String = "00:00"
     @Published var expiresDate: Date?

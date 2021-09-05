@@ -78,10 +78,11 @@ struct HomeView: View {
                 }
                 if viewModel.hostType == 1 {
                     if let barcode = viewModel.barcodeString {
-                        Rectangle().fill(Color.gray).frame(height: 1)
                         VStack(spacing: 8) {
+                            Rectangle().fill(Color.gray).frame(height: 1)
+                            
                             Text("Claim with your camera").font(.title2).padding()
-                            Text(viewModel.createPaymentQR(code: barcode)).font(.caption2)
+                            
                             QRCodeView(qrcode: viewModel.createPaymentQR(code: barcode))
                                 .frame(width: 120, height: 120)
                             
@@ -95,6 +96,11 @@ struct HomeView: View {
                                 Text("¥")
                                 TextField("", text: $viewModel.amount)
                             }
+                            
+                            Text(viewModel.createPaymentQR(code: barcode))
+                                .font(.caption2)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(3)
                         }.padding()
                     }
                 }
