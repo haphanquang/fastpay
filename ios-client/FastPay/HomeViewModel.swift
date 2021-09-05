@@ -11,12 +11,11 @@ import SwiftUI
 import UIKit
 import Combine
 
-private let domain = "https://fast-rpay.bhbjou32603kg.ap-northeast-1.cs.amazonlightsail.com"
-
-//private let domain = "http://localhost"
+private let remote = ""
+private let localhost = "http://localhost"
 
 class HomeViewModel: ObservableObject {
-    private let manager = SocketManager(socketURL: URL(string: domain)!, config: [.log(true), .compress])
+    
     
     @Published var barcodeString: String?
     @Published var countdown: String = "00:00"
@@ -24,6 +23,7 @@ class HomeViewModel: ObservableObject {
     @Published var showPayment: Bool = false
     @Published var username = "username 1"
     @Published var currentUser: User?
+    @Published var hostType: Int = 0
     
     var payment: Payment?
     
@@ -31,19 +31,22 @@ class HomeViewModel: ObservableObject {
     private var timerCancellable: AnyCancellable?
     private let decoder = HomeViewModel.createDecoder()
     
-    
-    
-    func transform() {
-        
+    private var domain: String {
+        hostType == 0 ? localhost : remote
     }
+    private var manager: SocketManager!
+    
+    init() {}
+    func transform() {}
     
     func refresh() {
         timerCancellable = nil
-        countdown = "--:--"
+        countdown = "05:00"
         fetchBarcode()
     }
     
     func connectSocket() {
+        manager = SocketManager(socketURL: URL(string: domain)!, config: [.log(true), .compress])
         let socket = manager.defaultSocket
         socket.disconnect()
         
@@ -87,7 +90,6 @@ class HomeViewModel: ObservableObject {
     
     func fetchBarcode() {
         guard let userId = self.currentUser?._id else { return }
-        
         let url = URL(string: domain + "/create_code?user_id=\(userId)")!
         
         let response = URLSession.shared
@@ -130,6 +132,11 @@ class HomeViewModel: ObservableObject {
             }
             .receive(on: RunLoop.main)
             .assign(to: \.countdown, on: self)
+    }
+    
+    
+    func createPaymentQR(code: String) -> String {
+        return remote + "/make_payment?store_id=1&amount=19999&code=\(code)"
     }
     
     private static func createDecoder() -> JSONDecoder {

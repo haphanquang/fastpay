@@ -12,8 +12,7 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        VStack {
-            
+        VStack(spacing: 8) {
             if viewModel.currentUser == nil {
                 HStack {
                     TextField("enter username", text: $viewModel.username)
@@ -24,6 +23,13 @@ struct HomeView: View {
                         Text("Connect")
                     }
                 }.padding()
+                
+                Picker("Host?", selection: $viewModel.hostType) {
+                    Text("Local").tag(0)
+                    Text("Remote").tag(1)
+                }
+                .padding(.horizontal)
+                .pickerStyle(SegmentedPickerStyle())
             } else {
                 HStack {
                     Text("\(viewModel.username)" )
@@ -66,6 +72,13 @@ struct HomeView: View {
                             .multilineTextAlignment(.leading)
                             .frame(width: 50)
                         Spacer().frame(height: 24)
+                    }
+                }
+                
+                if viewModel.hostType == 1 {
+                    if let barcode = viewModel.barcodeString {
+                        QRCodeView(qrcode: viewModel.createPaymentQR(code: barcode))
+                            .frame(width: 120, height: 120)
                     }
                 }
                 

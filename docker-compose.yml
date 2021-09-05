@@ -4,14 +4,15 @@ services:
   barcode:
     restart: always
     build: ./api
+    # image: haphanquang/fastpay_barcode:latest
     ports:
-      - 80:3000
+      - 80:80
     depends_on:
       - mongo
 
   mongo:
     image: mongo
-    restart: always
+    # restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example

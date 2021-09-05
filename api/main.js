@@ -5,7 +5,7 @@ const io = require("socket.io")(http);
 const { MongoClient } = require("mongodb");
 var ObjectId = require('mongodb').ObjectId;
 
-const client = new MongoClient("mongodb://root:example@mongo:27017/");
+const client = new MongoClient("mongodb://root:example@mongo:27017/", {useNewUrlParser: true, useUnifiedTopology: true});
 
 express.use(cors());
 
@@ -149,7 +149,7 @@ express.get("/make_payment", async (request, response) => {
 });
 
 
-http.listen(3000, async () => {
+http.listen(80, async () => {
     try {
         await client.connect();
         users = client.db("payment").collection("user");

@@ -21,6 +21,18 @@ struct BarcodeView: UIViewRepresentable {
     }
 }
 
+struct QRCodeView: UIViewRepresentable {
+    let qrcode: String
+    
+    func makeUIView(context: Context) -> UIImageView {
+        UIImageView()
+    }
+    
+    func updateUIView(_ uiView: UIImageView, context: Context) {
+        uiView.image = UIImage(qrcode: qrcode)
+    }
+}
+
 extension UIImage {
     convenience init?(barcode: String) {
         let data = barcode.data(using: .ascii)
@@ -29,6 +41,19 @@ extension UIImage {
         }
         filter.setValue(data, forKey: "inputMessage")
         guard let ciImage = filter.outputImage else {
+            return nil
+        }
+        self.init(ciImage: ciImage)
+    }
+    
+    convenience init?(qrcode: String) {
+        let data = qrcode.data(using: String.Encoding.ascii)
+        guard let filter = CIFilter(name: "CIQRCodeGenerator") else {
+            return nil
+        }
+        filter.setValue(data, forKey: "inputMessage")
+        let transform = CGAffineTransform(scaleX: 3, y: 3)
+        guard let ciImage = filter.outputImage?.transformed(by: transform) else {
             return nil
         }
         self.init(ciImage: ciImage)
@@ -64,6 +89,10 @@ extension String {
     }
     func inserting<S: StringProtocol>(separator: S, every n: Int) -> Self {
         .init(unfoldSubSequences(limitedTo: n).joined(separator: separator))
+    }
+    
+    var isLocalHost: Bool {
+        return self.hasPrefix("http://localhost")
     }
 }
 
