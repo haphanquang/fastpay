@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBA07B6226E325FB0070A82D /* FastPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6126E325FB0070A82D /* FastPayApp.swift */; };
+		EBA07B6426E325FB0070A82D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6326E325FB0070A82D /* ContentView.swift */; };
+		EBA07B6626E325FC0070A82D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA07B6526E325FC0070A82D /* Assets.xcassets */; };
+		EBA07B6926E325FC0070A82D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA07B6826E325FC0070A82D /* Preview Assets.xcassets */; };
+		EBA07B7426E325FD0070A82D /* FastPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B7326E325FD0070A82D /* FastPayTests.swift */; };
+		EBA07B7F26E325FD0070A82D /* FastPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B7E26E325FD0070A82D /* FastPayUITests.swift */; };
+		EBA07B8F26E326710070A82D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B8E26E326710070A82D /* HomeView.swift */; };
+		EBA07B9126E32BCD0070A82D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9026E32BCD0070A82D /* Utils.swift */; };
+		EBA07B9426E342D60070A82D /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = EBA07B9326E342D60070A82D /* SocketIO */; };
+		EBA07B9626E342EF0070A82D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9526E342EF0070A82D /* HomeViewModel.swift */; };
+		EBA07B9826E350210070A82D /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9726E350210070A82D /* PaymentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBA07B7026E325FD0070A82D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBA07B5626E325FB0070A82D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBA07B5D26E325FB0070A82D;
+			remoteInfo = FastPay;
+		};
+		EBA07B7B26E325FD0070A82D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBA07B5626E325FB0070A82D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBA07B5D26E325FB0070A82D;
+			remoteInfo = FastPay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBA07B5E26E325FB0070A82D /* FastPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA07B6126E325FB0070A82D /* FastPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPayApp.swift; sourceTree = "<group>"; };
+		EBA07B6326E325FB0070A82D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBA07B6526E325FC0070A82D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBA07B6826E325FC0070A82D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBA07B6A26E325FC0070A82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA07B6F26E325FD0070A82D /* FastPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA07B7326E325FD0070A82D /* FastPayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPayTests.swift; sourceTree = "<group>"; };
+		EBA07B7526E325FD0070A82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA07B7A26E325FD0070A82D /* FastPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBA07B7E26E325FD0070A82D /* FastPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPayUITests.swift; sourceTree = "<group>"; };
+		EBA07B8026E325FD0070A82D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA07B8E26E326710070A82D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EBA07B9026E32BCD0070A82D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EBA07B9526E342EF0070A82D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EBA07B9726E350210070A82D /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBA07B5B26E325FB0070A82D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA07B9426E342D60070A82D /* SocketIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B6C26E325FD0070A82D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B7726E325FD0070A82D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBA07B5526E325FB0070A82D = {
+			isa = PBXGroup;
+			children = (
+				EBA07B6026E325FB0070A82D /* FastPay */,
+				EBA07B7226E325FD0070A82D /* FastPayTests */,
+				EBA07B7D26E325FD0070A82D /* FastPayUITests */,
+				EBA07B5F26E325FB0070A82D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBA07B5F26E325FB0070A82D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBA07B5E26E325FB0070A82D /* FastPay.app */,
+				EBA07B6F26E325FD0070A82D /* FastPayTests.xctest */,
+				EBA07B7A26E325FD0070A82D /* FastPayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBA07B6026E325FB0070A82D /* FastPay */ = {
+			isa = PBXGroup;
+			children = (
+				EBA07B9026E32BCD0070A82D /* Utils.swift */,
+				EBA07B6126E325FB0070A82D /* FastPayApp.swift */,
+				EBA07B6326E325FB0070A82D /* ContentView.swift */,
+				EBA07B8E26E326710070A82D /* HomeView.swift */,
+				EBA07B9526E342EF0070A82D /* HomeViewModel.swift */,
+				EBA07B9726E350210070A82D /* PaymentView.swift */,
+				EBA07B6526E325FC0070A82D /* Assets.xcassets */,
+				EBA07B6A26E325FC0070A82D /* Info.plist */,
+				EBA07B6726E325FC0070A82D /* Preview Content */,
+			);
+			path = FastPay;
+			sourceTree = "<group>";
+		};
+		EBA07B6726E325FC0070A82D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EBA07B6826E325FC0070A82D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBA07B7226E325FD0070A82D /* FastPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBA07B7326E325FD0070A82D /* FastPayTests.swift */,
+				EBA07B7526E325FD0070A82D /* Info.plist */,
+			);
+			path = FastPayTests;
+			sourceTree = "<group>";
+		};
+		EBA07B7D26E325FD0070A82D /* FastPayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBA07B7E26E325FD0070A82D /* FastPayUITests.swift */,
+				EBA07B8026E325FD0070A82D /* Info.plist */,
+			);
+			path = FastPayUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBA07B5D26E325FB0070A82D /* FastPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA07B8326E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPay" */;
+			buildPhases = (
+				EBA07B5A26E325FB0070A82D /* Sources */,
+				EBA07B5B26E325FB0070A82D /* Frameworks */,
+				EBA07B5C26E325FB0070A82D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastPay;
+			packageProductDependencies = (
+				EBA07B9326E342D60070A82D /* SocketIO */,
+			);
+			productName = FastPay;
+			productReference = EBA07B5E26E325FB0070A82D /* FastPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBA07B6E26E325FD0070A82D /* FastPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA07B8626E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPayTests" */;
+			buildPhases = (
+				EBA07B6B26E325FD0070A82D /* Sources */,
+				EBA07B6C26E325FD0070A82D /* Frameworks */,
+				EBA07B6D26E325FD0070A82D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBA07B7126E325FD0070A82D /* PBXTargetDependency */,
+			);
+			name = FastPayTests;
+			productName = FastPayTests;
+			productReference = EBA07B6F26E325FD0070A82D /* FastPayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBA07B7926E325FD0070A82D /* FastPayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBA07B8926E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPayUITests" */;
+			buildPhases = (
+				EBA07B7626E325FD0070A82D /* Sources */,
+				EBA07B7726E325FD0070A82D /* Frameworks */,
+				EBA07B7826E325FD0070A82D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBA07B7C26E325FD0070A82D /* PBXTargetDependency */,
+			);
+			name = FastPayUITests;
+			productName = FastPayUITests;
+			productReference = EBA07B7A26E325FD0070A82D /* FastPayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBA07B5626E325FB0070A82D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					EBA07B5D26E325FB0070A82D = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					EBA07B6E26E325FD0070A82D = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EBA07B5D26E325FB0070A82D;
+					};
+					EBA07B7926E325FD0070A82D = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EBA07B5D26E325FB0070A82D;
+					};
+				};
+			};
+			buildConfigurationList = EBA07B5926E325FB0070A82D /* Build configuration list for PBXProject "FastPay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBA07B5526E325FB0070A82D;
+			packageReferences = (
+				EBA07B9226E342D60070A82D /* XCRemoteSwiftPackageReference "socket" */,
+			);
+			productRefGroup = EBA07B5F26E325FB0070A82D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBA07B5D26E325FB0070A82D /* FastPay */,
+				EBA07B6E26E325FD0070A82D /* FastPayTests */,
+				EBA07B7926E325FD0070A82D /* FastPayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBA07B5C26E325FB0070A82D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA07B6926E325FC0070A82D /* Preview Assets.xcassets in Resources */,
+				EBA07B6626E325FC0070A82D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B6D26E325FD0070A82D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B7826E325FD0070A82D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBA07B5A26E325FB0070A82D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA07B9126E32BCD0070A82D /* Utils.swift in Sources */,
+				EBA07B8F26E326710070A82D /* HomeView.swift in Sources */,
+				EBA07B9826E350210070A82D /* PaymentView.swift in Sources */,
+				EBA07B6426E325FB0070A82D /* ContentView.swift in Sources */,
+				EBA07B9626E342EF0070A82D /* HomeViewModel.swift in Sources */,
+				EBA07B6226E325FB0070A82D /* FastPayApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B6B26E325FD0070A82D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA07B7426E325FD0070A82D /* FastPayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA07B7626E325FD0070A82D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA07B7F26E325FD0070A82D /* FastPayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBA07B7126E325FD0070A82D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBA07B5D26E325FB0070A82D /* FastPay */;
+			targetProxy = EBA07B7026E325FD0070A82D /* PBXContainerItemProxy */;
+		};
+		EBA07B7C26E325FD0070A82D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBA07B5D26E325FB0070A82D /* FastPay */;
+			targetProxy = EBA07B7B26E325FD0070A82D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EBA07B8126E325FD0070A82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBA07B8226E325FD0070A82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBA07B8426E325FD0070A82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FastPay/Preview Content\"";
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FastPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBA07B8526E325FD0070A82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FastPay/Preview Content\"";
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FastPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBA07B8726E325FD0070A82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				INFOPLIST_FILE = FastPayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastPay.app/FastPay";
+			};
+			name = Debug;
+		};
+		EBA07B8826E325FD0070A82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				INFOPLIST_FILE = FastPayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastPay.app/FastPay";
+			};
+			name = Release;
+		};
+		EBA07B8A26E325FD0070A82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				INFOPLIST_FILE = FastPayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FastPay;
+			};
+			name = Debug;
+		};
+		EBA07B8B26E325FD0070A82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				INFOPLIST_FILE = FastPayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FastPay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBA07B5926E325FB0070A82D /* Build configuration list for PBXProject "FastPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA07B8126E325FD0070A82D /* Debug */,
+				EBA07B8226E325FD0070A82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA07B8326E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA07B8426E325FD0070A82D /* Debug */,
+				EBA07B8526E325FD0070A82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA07B8626E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA07B8726E325FD0070A82D /* Debug */,
+				EBA07B8826E325FD0070A82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBA07B8926E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBA07B8A26E325FD0070A82D /* Debug */,
+				EBA07B8B26E325FD0070A82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBA07B9226E342D60070A82D /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 16.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBA07B9326E342D60070A82D /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBA07B9226E342D60070A82D /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EBA07B5626E325FB0070A82D /* Project object */;
+}

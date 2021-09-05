@@ -18,9 +18,7 @@ const sessionsMap = {};
 io.on("connection", (socket) => {
     socket.on("join", async (username) => {
         try {
-            
-            let user = await users.findOne({"username": username})
-
+            let user = await users.findOne({"username": username});
             if(!user) {
                 user = {"username": username}
                 await users.insertOne(user)
@@ -49,6 +47,11 @@ express.get("/create_code", async (request, response) => {
 
         if (!user_id) {
             response.json({"result": false, "msg": "User Id not found"})
+            return
+        }
+
+        if (user_id.length != 24) {
+            response.json({"result": false, "msg": "Invalid user id"})
             return
         }
 
