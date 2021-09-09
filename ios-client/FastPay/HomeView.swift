@@ -49,7 +49,7 @@ struct HomeView: View {
                                         .stroke(Color.green)
                                 )
                             Text(barcode.inserting(separator: " ", every: 4))
-                                .font(.caption)
+                                .font(.system(size: 15, weight: .medium, design: .rounded))
                                 .bold()
                         }
                         
@@ -107,6 +107,16 @@ struct HomeView: View {
                 
                 Spacer()
             }
+            
+            Spacer()
+            
+            if viewModel.apiVersion.count > 0 {
+                HStack {
+                    Text("Version : \(viewModel.apiVersion)")
+                    Spacer()
+                }.padding()
+            }
+            
         }.sheet(isPresented: $viewModel.showPayment, content: {
             PaymentView(payment: viewModel.payment!)
         })

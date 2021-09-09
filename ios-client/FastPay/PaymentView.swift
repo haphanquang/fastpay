@@ -14,7 +14,9 @@ struct PaymentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("TADA!").font(.title)
+            Text("TADA!")
+                .font(.title)
+                .padding()
             
             HStack {
                 Text("Payment").bold()

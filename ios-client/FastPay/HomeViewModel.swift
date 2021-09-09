@@ -11,7 +11,7 @@ import SwiftUI
 import UIKit
 import Combine
 
-private let remote = ""
+private let remote = "http://fastr-LoadB-6OD599J4KMVN-1964873307.ap-northeast-1.elb.amazonaws.com"
 private let localhost = "http://localhost"
 
 class HomeViewModel: ObservableObject {
@@ -19,11 +19,17 @@ class HomeViewModel: ObservableObject {
     @Published var countdown: String = "00:00"
     @Published var expiresDate: Date?
     @Published var showPayment: Bool = false
-    @Published var username = "username 1"
+    @Published var username = "User \(Int.random(in: 1...9))"
     @Published var currentUser: User?
     @Published var hostType: Int = 0
     @Published var storeId: String = "1"
     @Published var amount: String = "1200"
+    
+    #if API_V2
+    @Published var apiVersion = "v2"
+    #else
+    @Published var apiVersion = ""
+    #endif
     
     var payment: Payment?
     
@@ -32,8 +38,9 @@ class HomeViewModel: ObservableObject {
     private let decoder = HomeViewModel.createDecoder()
     
     private var domain: String {
-        hostType == 0 ? localhost : remote
+        (hostType == 0 ? localhost : remote) + (apiVersion.count > 0 ? "/\(apiVersion)" : "")
     }
+    
     private var manager: SocketManager!
     
     init() {}
@@ -103,14 +110,26 @@ class HomeViewModel: ObservableObject {
             }
             .decode(type: CreateBarcodeResponse.self, decoder: self.decoder)
             .catch { error -> Just<CreateBarcodeResponse> in
-                return Just(CreateBarcodeResponse.init(code: nil, expiresDate: nil, userId: nil))
+                #if API_V2
+                return Just(CreateBarcodeResponse(payCode: nil, expiresDate: nil, userId: nil))
+                #else
+                return Just(CreateBarcodeResponse(code: nil, expiresDate: nil, userId: nil))
+                #endif
             }.share()
         
+        #if API_V2
+        response.map { $0.payCode }
+            .assertNoFailure()
+            .receive(on: RunLoop.main)
+            .assign(to: \.barcodeString, on: self)
+            .store(in: &cancellables)
+        #else
         response.map { $0.code }
             .assertNoFailure()
             .receive(on: RunLoop.main)
             .assign(to: \.barcodeString, on: self)
             .store(in: &cancellables)
+        #endif
         
         response.map { $0.expiresDate }
             .assertNoFailure()
@@ -147,11 +166,19 @@ class HomeViewModel: ObservableObject {
     }
 }
 
+#if API_V2
+struct CreateBarcodeResponse: Codable {
+    let payCode: String?
+    let expiresDate: Date?
+    let userId: String?
+}
+#else
 struct CreateBarcodeResponse: Codable {
     let code: String?
     let expiresDate: Date?
     let userId: String?
 }
+#endif
 
 struct Payment: Codable {
     let _id: String?

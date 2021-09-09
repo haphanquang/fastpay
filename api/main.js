@@ -5,15 +5,16 @@ const io = require("socket.io")(http);
 const { MongoClient } = require("mongodb");
 var ObjectId = require('mongodb').ObjectId;
 
-const client = new MongoClient("mongodb://root:example@mongo:27017/", {useNewUrlParser: true, useUnifiedTopology: true});
 
+const client = new MongoClient("mongodb://root:example@mongo:27017/", {useNewUrlParser: true, useUnifiedTopology: true});
 express.use(cors());
+
+const utils = require('./utils.js');
+const sessionsMap = {};
 
 var users;
 var codes;
 var payments;
-
-const sessionsMap = {};
 
 io.on("connection", (socket) => {
     socket.on("join", async (username) => {
@@ -24,7 +25,7 @@ io.on("connection", (socket) => {
                 await users.insertOne(user)
             }
             
-            sessionsMap[user._id] = socket.id;
+            utils.addSession(user._id, socket.id)
             socket.username = user.username;
             socket.emit("joined", user);
         } catch (e) {
@@ -63,7 +64,7 @@ express.get("/create_code", async (request, response) => {
             return
         }
 
-        let code = createRandomCode(user_id);
+        let code = utils.createRandomCode(user_id);
     
         let minutes = 5
         let date = new Date((new Date()).getTime() + minutes * 60000);
@@ -96,24 +97,24 @@ express.get("/make_payment", async (request, response) => {
         let activeCode = await codes.findOne({"code": code})
 
         if (!activeCode) {
-            response.json({"result": false, "msg": "Invalid code"});
+            response.json({"result": false, "msg": "Invalid code"})
             return
         }
 
         if (!activeCode.is_active) {
-            response.json({"result": false, "msg": "Code " + code + " is invalid"});
+            response.json({"result": false, "msg": "Code " + code + " is invalid"})
             return
         }
 
         if (activeCode.is_paid) {
-            response.json({"result": false, "msg": "Code " + code + " is paid"});
+            response.json({"result": false, "msg": "Code " + code + " is paid"})
             return
         }
 
         let expires = activeCode.expires_date
 
         if (expires < Date.now()) {
-            response.json({"result": false, "msg": "Invalid code"});
+            response.json({"result": false, "msg": "Expired code"});
             return
         }
 
@@ -137,17 +138,20 @@ express.get("/make_payment", async (request, response) => {
         let inserted = await payments.insertOne(newPayment)
 
         response.json(
-            {"result": true, "payment_id": inserted.insertedId}
-        );
+            {"result": true, "payment_id": inserted.insertedId, "code": code}
+        )
 
-        const receiverId = sessionsMap[userID];
-        io.to(receiverId).emit("payment", newPayment);
+        const receiverId = utils.getSocketForUser(userID)
+        io.to(receiverId).emit("payment", newPayment)
 
     } catch (e) {
         console.error(e);
     }    
 });
 
+
+require('./v1/main.js')(express, io, client, sessionsMap); 
+require('./v2/main.js')(express, io, client, sessionsMap);
 
 http.listen(80, async () => {
     try {
@@ -156,22 +160,8 @@ http.listen(80, async () => {
         codes = client.db("payment").collection("codes");
         payments = client.db("payment").collection("payments");
 
-        console.log("Listening on port :%s...", http.address().port);
+        console.log("Listening on port :%s...", http.address().port)
     } catch (e) {
         console.error(e);
     }
 });
-
-function createRandomCode(userId) {
-    return "900001" + makeid(2) + makeid(8);
-}
-
-function makeid(length) {
-    var result           = '';
-    var characters       = '0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
-}

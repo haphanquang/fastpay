@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB8B7E5A26E996C300C3572E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9026E32BCD0070A82D /* Utils.swift */; };
+		EB8B7E5B26E996C300C3572E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B8E26E326710070A82D /* HomeView.swift */; };
+		EB8B7E5C26E996C300C3572E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9726E350210070A82D /* PaymentView.swift */; };
+		EB8B7E5D26E996C300C3572E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6326E325FB0070A82D /* ContentView.swift */; };
+		EB8B7E5E26E996C300C3572E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B9526E342EF0070A82D /* HomeViewModel.swift */; };
+		EB8B7E5F26E996C300C3572E /* FastPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6126E325FB0070A82D /* FastPayApp.swift */; };
+		EB8B7E6126E996C300C3572E /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = EB8B7E5726E996C300C3572E /* SocketIO */; };
+		EB8B7E6326E996C300C3572E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA07B6826E325FC0070A82D /* Preview Assets.xcassets */; };
+		EB8B7E6426E996C300C3572E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA07B6526E325FC0070A82D /* Assets.xcassets */; };
 		EBA07B6226E325FB0070A82D /* FastPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6126E325FB0070A82D /* FastPayApp.swift */; };
 		EBA07B6426E325FB0070A82D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07B6326E325FB0070A82D /* ContentView.swift */; };
 		EBA07B6626E325FC0070A82D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA07B6526E325FC0070A82D /* Assets.xcassets */; };
@@ -38,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB8B7E6826E996C300C3572E /* FastPayV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastPayV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8B7E6926E996C300C3572E /* FastPayV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FastPayV2-Info.plist"; path = "/Users/quangha.phan/Documents/Projects/FreshRPay/FastRPay/ios-client/FastPayV2-Info.plist"; sourceTree = "<absolute>"; };
 		EBA07B5E26E325FB0070A82D /* FastPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA07B6126E325FB0070A82D /* FastPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPayApp.swift; sourceTree = "<group>"; };
 		EBA07B6326E325FB0070A82D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +68,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EB8B7E6026E996C300C3572E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8B7E6126E996C300C3572E /* SocketIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA07B5B26E325FB0070A82D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +108,7 @@
 				EBA07B7226E325FD0070A82D /* FastPayTests */,
 				EBA07B7D26E325FD0070A82D /* FastPayUITests */,
 				EBA07B5F26E325FB0070A82D /* Products */,
+				EB8B7E6926E996C300C3572E /* FastPayV2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +118,7 @@
 				EBA07B5E26E325FB0070A82D /* FastPay.app */,
 				EBA07B6F26E325FD0070A82D /* FastPayTests.xctest */,
 				EBA07B7A26E325FD0070A82D /* FastPayUITests.xctest */,
+				EB8B7E6826E996C300C3572E /* FastPayV2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +168,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EB8B7E5626E996C300C3572E /* FastPayV2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8B7E6526E996C300C3572E /* Build configuration list for PBXNativeTarget "FastPayV2" */;
+			buildPhases = (
+				EB8B7E5926E996C300C3572E /* Sources */,
+				EB8B7E6026E996C300C3572E /* Frameworks */,
+				EB8B7E6226E996C300C3572E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastPayV2;
+			packageProductDependencies = (
+				EB8B7E5726E996C300C3572E /* SocketIO */,
+			);
+			productName = FastPay;
+			productReference = EB8B7E6826E996C300C3572E /* FastPayV2.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EBA07B5D26E325FB0070A82D /* FastPay */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBA07B8326E325FD0070A82D /* Build configuration list for PBXNativeTarget "FastPay" */;
@@ -242,6 +283,7 @@
 			projectRoot = "";
 			targets = (
 				EBA07B5D26E325FB0070A82D /* FastPay */,
+				EB8B7E5626E996C300C3572E /* FastPayV2 */,
 				EBA07B6E26E325FD0070A82D /* FastPayTests */,
 				EBA07B7926E325FD0070A82D /* FastPayUITests */,
 			);
@@ -249,6 +291,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EB8B7E6226E996C300C3572E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8B7E6326E996C300C3572E /* Preview Assets.xcassets in Resources */,
+				EB8B7E6426E996C300C3572E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA07B5C26E325FB0070A82D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +326,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EB8B7E5926E996C300C3572E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8B7E5A26E996C300C3572E /* Utils.swift in Sources */,
+				EB8B7E5B26E996C300C3572E /* HomeView.swift in Sources */,
+				EB8B7E5C26E996C300C3572E /* PaymentView.swift in Sources */,
+				EB8B7E5D26E996C300C3572E /* ContentView.swift in Sources */,
+				EB8B7E5E26E996C300C3572E /* HomeViewModel.swift in Sources */,
+				EB8B7E5F26E996C300C3572E /* FastPayApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBA07B5A26E325FB0070A82D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +384,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		EB8B7E6626E996C300C3572E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				API_VERSION = 2;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FastPay/Preview Content\"";
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				INFOPLIST_FILE = "FastPayV2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG API_V2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB8B7E6726E996C300C3572E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				API_VERSION = 2;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FastPay/Preview Content\"";
+				DEVELOPMENT_TEAM = V72W5MQP85;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = "FastPayV2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.rakuten.pay.FastPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = API_V2;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EBA07B8126E325FD0070A82D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +683,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EB8B7E6526E996C300C3572E /* Build configuration list for PBXNativeTarget "FastPayV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8B7E6626E996C300C3572E /* Debug */,
+				EB8B7E6726E996C300C3572E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBA07B5926E325FB0070A82D /* Build configuration list for PBXProject "FastPay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -606,6 +731,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EB8B7E5826E996C300C3572E /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 16.0.1;
+			};
+		};
 		EBA07B9226E342D60070A82D /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -617,6 +750,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EB8B7E5726E996C300C3572E /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB8B7E5826E996C300C3572E /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
 		EBA07B9326E342D60070A82D /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EBA07B9226E342D60070A82D /* XCRemoteSwiftPackageReference "socket" */;
